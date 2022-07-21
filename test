@@ -1,0 +1,17 @@
+# ansible.cfg
+
+[defaults]
+inventory = ./hosts
+remote_user = ec2-user
+private_key_file = /home/ec2-user/ansible/AWS.pem
+host_key_checking = False
+
+
+
+#Hosts
+
+[webserver]
+Client1 ansible_host=172.31.88.223
+
+[appserver]
+Client2 ansible_host=172.31.90.145
