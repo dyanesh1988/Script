@@ -1,0 +1,25 @@
+# Tags.yml
+
+---
+  - hosts: loadbalancers
+    become: true
+    tasks:
+      - name: Installing Tree
+        yum: name=tree state=latest
+        tags: TreeLB
+      
+      - name: Ping loadbalancers
+        action: ping 
+        tags: PingLB
+      
+
+  - hosts: webservers
+    become: true
+    tasks:
+      - name: Installing Tree
+        yum: name=tree state=latest
+        tags: TreeLB
+        
+      - name: Ensure apache starts
+        service: name=httpd state=started enabled=yes
+        tags: RestartAppache
