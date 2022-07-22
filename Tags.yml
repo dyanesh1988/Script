@@ -18,8 +18,8 @@
     tasks:
       - name: Installing Tree
         yum: name=tree state=latest
-        tags: TreeLB
+        tags: TreeWebSrvs
         
-      - name: Ensure apache starts
-        service: name=httpd state=started enabled=yes
+      - name: Ensure apache Restarts
+        service: name=httpd state=restarted
         tags: RestartAppache
