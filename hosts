@@ -1,0 +1,7 @@
+#Hosts
+
+[webserver]
+Client1 ansible_host=172.31.88.223
+
+[appserver]
+Client2 ansible_host=172.31.90.145
